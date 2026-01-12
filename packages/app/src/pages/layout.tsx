@@ -54,6 +54,7 @@ import { DialogSelectProvider } from "@/components/dialog-select-provider"
 import { DialogEditProject } from "@/components/dialog-edit-project"
 import { DialogSelectServer } from "@/components/dialog-select-server"
 import { DialogSelectLanguage } from "@/components/dialog-select-language"
+import { DialogSkillMarket } from "@/components/dialog-skill-market"
 import { useCommand, type CommandOption } from "@/context/command"
 import { ConstrainDragXAxis } from "@/utils/solid-dnd"
 import { DialogSelectDirectory } from "@/components/dialog-select-directory"
@@ -1049,19 +1050,21 @@ export default function Layout(props: ParentProps) {
               <Show when={expanded()}>{t().home.openProject}</Show>
             </Button>
           </Tooltip>
-          <Tooltip placement="right" value={t().sidebar.shareFeedback} inactive={expanded()}>
-            <Button
-              as={"a"}
-              href="https://opencode.ai/desktop-feedback"
-              target="_blank"
-              class="flex w-full text-left justify-start text-text-base stroke-[1.5px] rounded-lg px-2"
-              variant="ghost"
-              size="large"
-              icon="bubble-5"
-            >
-              <Show when={expanded()}>{t().sidebar.shareFeedback}</Show>
-            </Button>
-          </Tooltip>
+          <Show when={false}>
+            <Tooltip placement="right" value={t().sidebar.shareFeedback} inactive={expanded()}>
+              <Button
+                as={"a"}
+                href="https://opencode.ai/desktop-feedback"
+                target="_blank"
+                class="flex w-full text-left justify-start text-text-base stroke-[1.5px] rounded-lg px-2"
+                variant="ghost"
+                size="large"
+                icon="bubble-5"
+              >
+                <Show when={expanded()}>{t().sidebar.shareFeedback}</Show>
+              </Button>
+            </Tooltip>
+          </Show>
           <Tooltip placement="right" value={t().sidebar.changeLanguage} inactive={expanded()}>
             <Button
               class="flex w-full text-left justify-start text-text-base stroke-[1.5px] rounded-lg px-2"
@@ -1071,6 +1074,17 @@ export default function Layout(props: ParentProps) {
               onClick={() => dialog.show(() => <DialogSelectLanguage />)}
             >
               <Show when={expanded()}>{t().sidebar.changeLanguage}</Show>
+            </Button>
+          </Tooltip>
+          <Tooltip placement="right" value={t().sidebar.skillsMarket} inactive={expanded()}>
+            <Button
+              class="flex w-full text-left justify-start text-text-base stroke-[1.5px] rounded-lg px-2"
+              variant="ghost"
+              size="large"
+              icon="folder-add-left"
+              onClick={() => dialog.show(() => <DialogSkillMarket />)}
+            >
+              <Show when={expanded()}>{t().sidebar.skillsMarket}</Show>
             </Button>
           </Tooltip>
         </div>

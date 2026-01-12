@@ -1,15 +1,9 @@
 import en from "./en"
 import zhCN from "./zh-CN"
-import ja from "./ja"
-import fr from "./fr"
-import es from "./es"
 
 export const locales = {
   en,
   "zh-CN": zhCN,
-  ja,
-  fr,
-  es,
 } as const
 
 export type Locale = keyof typeof locales

@@ -1,7 +1,8 @@
 mod cli;
 mod window_customizer;
+mod skill_market;
 
-use cli::{get_sidecar_path, install_cli, sync_cli};
+use cli::{install_cli, sync_cli};
 use futures::FutureExt;
 use std::{
     collections::VecDeque,
@@ -279,7 +280,12 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             kill_sidecar,
             install_cli,
-            ensure_server_started
+            ensure_server_started,
+            skill_market::clone_skills_repo,
+            skill_market::get_skills_list,
+            skill_market::install_skill,
+            skill_market::uninstall_skill,
+            skill_market::get_skills_dir,
         ])
         .setup(move |app| {
             let app = app.handle().clone();
