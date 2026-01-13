@@ -77,6 +77,10 @@ export default {
       title: "管理模型",
       description: "管理可用模型",
     },
+    manageMcp: {
+      title: "管理 MCP",
+      description: "添加和删除 MCP 服务器",
+    },
   },
   terminal: {
     tabs: {
@@ -101,6 +105,7 @@ export default {
     shareFeedback: "分享反馈",
     changeLanguage: "切换语言",
     skillsMarket: "技能市场",
+    manageMcp: "管理 MCP",
   },
   skillMarket: {
     title: "技能市场",

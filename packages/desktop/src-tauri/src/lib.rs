@@ -1,6 +1,7 @@
 mod cli;
 mod window_customizer;
 mod skill_market;
+mod mcp_config;
 
 use cli::{install_cli, sync_cli};
 use futures::FutureExt;
@@ -237,7 +238,9 @@ pub fn run() {
             skill_market::get_skills_dir,
             ensure_server_ready,
             get_default_server_url,
-            set_default_server_url
+            set_default_server_url,
+            mcp_config::read_mcp_configs,
+            mcp_config::write_mcp_configs,
         ])
         .setup(move |app| {
             let app = app.handle().clone();

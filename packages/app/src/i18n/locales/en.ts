@@ -77,6 +77,10 @@ export default {
       title: "Manage Models",
       description: "Manage available models",
     },
+    manageMcp: {
+      title: "Manage MCPs",
+      description: "Add and remove MCP servers",
+    },
   },
   terminal: {
     tabs: {
@@ -101,6 +105,7 @@ export default {
     shareFeedback: "Share feedback",
     changeLanguage: "Change language",
     skillsMarket: "Skills Market",
+    manageMcp: "Manage MCPs",
   },
   skillMarket: {
     title: "Skills Market",

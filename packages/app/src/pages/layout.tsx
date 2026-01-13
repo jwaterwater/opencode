@@ -57,6 +57,7 @@ import { DialogEditProject } from "@/components/dialog-edit-project"
 import { DialogSelectServer } from "@/components/dialog-select-server"
 import { DialogSelectLanguage } from "@/components/dialog-select-language"
 import { DialogSkillMarket } from "@/components/dialog-skill-market"
+import { DialogManageMcp } from "@/components/dialog-manage-mcp"
 import { useCommand, type CommandOption } from "@/context/command"
 import { ConstrainDragXAxis } from "@/utils/solid-dnd"
 import { navStart } from "@/utils/perf"
@@ -1251,17 +1252,7 @@ export default function Layout(props: ParentProps) {
               </Button>
             </Tooltip>
           </Show>
-          <Tooltip placement="right" value={t().sidebar.changeLanguage} inactive={expanded()}>
-            <Button
-              class="flex w-full text-left justify-start text-text-base stroke-[1.5px] rounded-lg px-2"
-              variant="ghost"
-              size="large"
-              icon="settings-gear"
-              onClick={() => dialog.show(() => <DialogSelectLanguage />)}
-            >
-              <Show when={expanded()}>{t().sidebar.changeLanguage}</Show>
-            </Button>
-          </Tooltip>
+          
           <Tooltip placement="right" value={t().sidebar.skillsMarket} inactive={expanded()}>
             <Button
               class="flex w-full text-left justify-start text-text-base stroke-[1.5px] rounded-lg px-2"
@@ -1271,6 +1262,28 @@ export default function Layout(props: ParentProps) {
               onClick={() => dialog.show(() => <DialogSkillMarket />)}
             >
               <Show when={expanded()}>{t().sidebar.skillsMarket}</Show>
+            </Button>
+          </Tooltip>
+          <Tooltip placement="right" value={t().sidebar.manageMcp} inactive={expanded()}>
+            <Button
+              class="flex w-full text-left justify-start text-text-base stroke-[1.5px] rounded-lg px-2"
+              variant="ghost"
+              size="large"
+              icon="mcp"
+              onClick={() => dialog.show(() => <DialogManageMcp />)}
+            >
+              <Show when={expanded()}>{t().sidebar.manageMcp}</Show>
+            </Button>
+          </Tooltip>
+          <Tooltip placement="right" value={t().sidebar.changeLanguage} inactive={expanded()}>
+            <Button
+              class="flex w-full text-left justify-start text-text-base stroke-[1.5px] rounded-lg px-2"
+              variant="ghost"
+              size="large"
+              icon="settings-gear"
+              onClick={() => dialog.show(() => <DialogSelectLanguage />)}
+            >
+              <Show when={expanded()}>{t().sidebar.changeLanguage}</Show>
             </Button>
           </Tooltip>
         </div>
