@@ -230,7 +230,6 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             kill_sidecar,
             install_cli,
-            ensure_server_started,
             skill_market::clone_skills_repo,
             skill_market::get_skills_list,
             skill_market::install_skill,
